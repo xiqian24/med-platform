@@ -35,7 +35,6 @@
         <spring-cloud.version>2023.0.0</spring-cloud.version>
         <jwt.version>0.12.3</jwt.version>
         <knife4j.version>4.5.0</knife4j.version>
-        <lombok.version>1.18.36</lombok.version>
     </properties>
 
     <dependencyManagement>

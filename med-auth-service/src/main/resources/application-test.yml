@@ -11,8 +11,13 @@ spring:
   cloud:
     config:
       enabled: false
-    discovery:
-      enabled: false
+      import-check:
+        enabled: false
+  config:
+    import: ""
+  autoconfigure:
+    exclude:
+      - org.springframework.cloud.config.client.ConfigServerAutoConfiguration
 eureka:
   client:
     enabled: false

@@ -8,17 +8,15 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: false
-  cloud:
-    config:
-      enabled: false
-    discovery:
-      enabled: false
-  cache:
-    type: simple
+  config:
+    import: ""
   autoconfigure:
     exclude:
+      - org.springframework.cloud.config.client.ConfigServerAutoConfiguration
       - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
       - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+  cache:
+    type: simple
 eureka:
   client:
     enabled: false
