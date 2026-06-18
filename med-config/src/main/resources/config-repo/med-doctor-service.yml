@@ -1,0 +1,8 @@
+server.port=8083
+spring.application.name=med-doctor-service
+spring.datasource.url=jdbc:h2:mem:doctordb;DB_CLOSE_DELAY=-1
+spring.redis.host=localhost
+spring.redis.port=6379
+spring.redis.timeout=3000ms
+spring.cache.type=redis
+spring.cache.redis.time-to-live=60000

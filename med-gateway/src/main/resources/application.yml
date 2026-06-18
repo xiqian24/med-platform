@@ -1,0 +1,46 @@
+server.port=8080
+spring.application.name=med-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: auth-service
+          uri: lb://med-auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=0
+        - id: patient-service
+          uri: lb://med-patient-service
+          predicates:
+            - Path=/api/patients/**
+          filters:
+            - StripPrefix=0
+        - id: doctor-service
+          uri: lb://med-doctor-service
+          predicates:
+            - Path=/api/doctors/**,/api/departments/**
+          filters:
+            - StripPrefix=0
+        - id: appointment-service
+          uri: lb://med-appointment-service
+          predicates:
+            - Path=/api/appointments/**
+          filters:
+            - StripPrefix=0
+        - id: record-service
+          uri: lb://med-record-service
+          predicates:
+            - Path=/api/records/**,/api/prescriptions/**
+          filters:
+            - StripPrefix=0

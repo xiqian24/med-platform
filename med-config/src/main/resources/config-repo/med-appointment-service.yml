@@ -1,0 +1,3 @@
+server.port=8084
+spring.application.name=med-appointment-service
+spring.datasource.url=jdbc:h2:mem:appointmentdb;DB_CLOSE_DELAY=-1
